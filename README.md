@@ -1,4 +1,4 @@
 ## Getting Started
-sql connector J needed as external library.
+mqsql connector J
 
-SQL workbench used for database management.
+mySQL workbench used for database management.
