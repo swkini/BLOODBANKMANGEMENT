@@ -18,7 +18,7 @@ public class Donor extends JFrame {
     private JTextField daddressField;
     private JComboBox<String> bloodGroupComboBox;
     private JComboBox<String> bloodBankComboBox;
-    private JComboBox<String> doctorNameComboBox; // Changed to store doctor names
+    private JComboBox<String> doctorNameComboBox; 
 
     Donor() {
         JFrame frame = new JFrame("Donor Details Form");
@@ -31,7 +31,7 @@ public class Donor extends JFrame {
         JLabel daddressLabel = new JLabel("Address:");
         JLabel bloodGroupLabel = new JLabel("Blood Group:");
         JLabel bloodBankLabel = new JLabel("Blood Bank:");
-        JLabel doctorNameLabel = new JLabel("Doctor Name:"); // Changed label name
+        JLabel doctorNameLabel = new JLabel("Doctor Name:"); 
 
         // Adjusted text field sizes
         dnameField = new JTextField(20);
@@ -118,10 +118,10 @@ public class Donor extends JFrame {
 
         gbc.gridx = 0;
         gbc.gridy = 8;
-        panel.add(doctorNameLabel, gbc); // Added doctor name label
+        panel.add(doctorNameLabel, gbc);
 
         gbc.gridx = 1;
-        panel.add(doctorNameComboBox, gbc); // Changed doctor ID combo box to doctor name combo box
+        panel.add(doctorNameComboBox, gbc);
 
         JButton submitButton1 = new JButton("Submit");
         gbc.gridx = 0;
@@ -153,7 +153,7 @@ public class Donor extends JFrame {
         String address = daddressField.getText();
         String bloodGroup = (String) bloodGroupComboBox.getSelectedItem();
         String bloodBank = (String) bloodBankComboBox.getSelectedItem();
-        String doctorName = (String) doctorNameComboBox.getSelectedItem(); // Get selected doctor name
+        String doctorName = (String) doctorNameComboBox.getSelectedItem();
 
         Connection con = null;
         PreparedStatement pstmt = null;
