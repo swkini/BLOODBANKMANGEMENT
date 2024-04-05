@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class Donor extends JFrame {
     private JTextField dnameField;
-    private JTextField dgenderField;
+    private JComboBox<String> dgenderField;
     private JTextField dbloodPressureField;
     private JTextField ddateOfBirthField;
     private JTextField dmobileField;
@@ -35,11 +35,12 @@ public class Donor extends JFrame {
 
         // Adjusted text field sizes
         dnameField = new JTextField(20);
-        dgenderField = new JTextField(20);
         dbloodPressureField = new JTextField(20);
         ddateOfBirthField = new JTextField(20);
         dmobileField = new JTextField(20);
         daddressField = new JTextField(20);
+        String[] GenderOptions = { "Male", "Female", "Other" };
+        dgenderField = new JComboBox<>(GenderOptions);
 
         String[] bloodGroupOptions = { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
         bloodGroupComboBox = new JComboBox<>(bloodGroupOptions);
@@ -146,7 +147,7 @@ public class Donor extends JFrame {
     // Method to insert donor details into the database
     private void insertDonorDetails() {
         String donorName = dnameField.getText();
-        String gender = dgenderField.getText();
+        String gender = (String) dgenderField.getSelectedItem();
         String bloodPressure = dbloodPressureField.getText();
         String dateOfBirth = ddateOfBirthField.getText();
         long phoneNumber = Long.parseLong(dmobileField.getText());
